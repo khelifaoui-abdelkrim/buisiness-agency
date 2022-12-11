@@ -1,0 +1,745 @@
+/*commun styles*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "baloo Da 2",cursive;
+  scroll-behavior: smooth;
+}
+html{
+  font-size: 62.5%;
+}
+a{
+  text-decoration: none;
+}
+.section-h{
+  padding-left: 3rem;
+  color: rgb(234, 234, 234);
+  font-family: "Oswald",sans-serif;
+  font-size: 8rem;
+  font-weight: 400;
+  padding-right: 2rem;
+}
+.header-line{
+  height: .3rem;
+  width: 15rem;
+  background-color: rgb(255, 255, 255);
+  left: 45rem;
+}
+/*end of commun styles*/
+
+/*navbar*/
+.navbar{
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  z-index: 10;
+  top: -5rem;
+  background: rgb(0, 0, 0,.6);
+  animation: animate-navbar 1.5s .5s forwards;
+}
+@keyframes animate-navbar{
+  0%{
+    top: -5rem;
+  }
+  100%{
+    top: 0;
+  }
+}
+.nav-list{
+  position: absolute;
+  width: 100%;
+  height: 0vh;
+  background-color: rgb(0, 0, 0,.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: height .5s;
+}
+.nav-list.change{
+  height: 100vh;
+  visibility: visible;
+  transition: all .5s ;
+}
+.nav-line{
+  text-decoration: none;
+  font-size: 5rem;
+  font-weight: 100;
+  letter-spacing: .1rem;
+  color: #fff;
+  margin: .7rem;
+  font-family: 'MADE Soulmaze',sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .2s;
+}
+.change .nav-line{
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .7s .5s;
+}
+.nav-line:hover{
+  color: rgb(161, 0, 0);
+  transition: all .5s;
+}
+.logo a{
+  position: absolute;
+  top: -.7rem;
+  margin-left: 4rem;
+  font-size: 3rem;
+  letter-spacing: .2rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: #fff;
+}
+.logo span{
+  font-size: 4rem;
+  color: rgb(161, 0, 0);
+}
+.menu-btn{
+  position: fixed;
+  height: 3rem;
+  width: 4rem;
+  z-index: 10;
+  top: 1rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer ;
+  text-shadow: 1rem 1rem 1rem black;
+}
+
+.line{
+  height:.3rem;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  transition: all .3s;
+}
+.line1{
+ width: 50%;
+}
+.change .line1{
+  transform: translate(100%,.9rem) rotate(-35deg);
+  transform-origin: right; 
+  transition: all .5s;
+}
+.line3{
+  width: 50%;
+  margin-left: auto; 
+}
+.change .line3{
+  transform: translateY(-.8rem) rotate(35deg);
+  transform-origin: right; 
+  transition: all .5s;
+}
+/*end of navbar*/
+
+/*section1*/
+.section1{
+  width: 100%;
+  height: 100vh;
+  background-image: url(images/dark-bg.jpeg);
+  background-size: cover;
+  position: relative;
+}
+.banner{
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  text-align: center;  
+}
+.banner-h{
+  margin-bottom: 1rem;
+  height: 20rem;
+}
+.banner-h span{
+  font-weight: 300;
+  color: #fff;
+  font-size: 8rem;
+  font-family: "Oswald" ,sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  text-shadow: .5rem .5rem 1rem black;
+}
+.header1{
+  animation: animate-heading 10s 2.5s infinite;
+}
+.header2{
+  animation: animate-heading 10s 5s infinite;
+}
+.header3{
+  animation: animate-heading 10s 7.5s infinite;
+}
+.header4{
+  animation: animate-heading 10s 10s infinite;
+}
+/*.banner-h span.change{ pour la methode avec js
+  opacity: 1;
+  letter-spacing: 3rem;
+}*/
+@keyframes animate-heading{
+  0%{
+    opacity: 0;
+    transform: translateZ(8rem);
+    letter-spacing: 5rem;
+  }
+  3%{
+    opacity: 1;
+    transform: translateZ(0);
+    letter-spacing: 2rem;
+  }
+  25%{
+    opacity: 1;
+    transform: translateZ(0);
+    letter-spacing: 2rem;
+  }
+  28%{
+    opacity: 0;
+    transform: translateZ(8rem);
+    letter-spacing: .5rem;
+  }
+  100%{
+    opacity: 0;
+    transform: translateZ(8rem);
+    letter-spacing: 3rem;
+  }
+}
+
+.banner-p{
+  font-size: 4rem;
+  color: #fff;
+  margin: 3rem auto;
+  background-color: rgb(0, 0, 0, .6);
+  width:50rem;
+  letter-spacing: .3rem;
+  opacity: 0;
+  animation: animation 1s 1.5s forwards;
+}
+@keyframes animation{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}  
+.banner-btn{
+  background: linear-gradient(to right,rgb(176, 0, 0), rgb(122, 0, 0));
+  font-size: 2rem;
+  padding: .4rem 1.8rem;
+  margin: 0 auto;
+  border-radius: 4rem;
+  box-shadow: .2rem .2rem .5rem rgb(0, 0, 0);
+  border:.1rem solid rgb(161, 0, 0);
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  animation: animation 1s 2s forwards;
+  position: relative;
+  overflow: hidden;
+}
+.banner-btn::before{
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right ,transparent,white,transparent);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transform: skewX(30deg);
+  transition: left .5s;
+}
+.banner-btn:hover::before{
+  left: 100%;
+  transition: all .5s;
+}
+/*end of section1*/
+
+/*section2*/
+.video-wrapper{
+  width: 50vw;
+  height: 54vh;
+  right: 5rem;
+  top: 5rem;
+  position: absolute;
+  box-shadow: 1.5rem 1.5rem 1rem black;
+  overflow: hidden;
+}
+.video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: .4;
+}
+.section2{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(32, 32, 32);
+  display: flex;
+  align-items: center;
+  padding: 0 5rem;
+  position: relative;
+}
+
+.paragraph{
+  position: absolute;
+  bottom: 3rem;
+  right: 5rem;
+  font-size: 1.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  color: rgb(233, 233, 233);
+  border-top: .4rem double white;
+  border-bottom: .4rem double white;
+}
+.paragraph i{
+  font-size: 5rem;
+  text-shadow: .5rem .5rem .8rem black;
+}
+.fa-quote-right{
+  align-self: flex-end;
+}
+.controls-wrapper{
+  position: absolute;
+  width: 100%;
+  height: 4rem;
+  background-color: rgb(0, 0, 0,.8);
+  bottom: 0;
+  padding: 1.2rem;
+  transform: translateY(calc(100% - 0.7rem));
+  transition: transform .3s;
+}
+.video-wrapper:hover .controls-wrapper{
+  transform: translateY(0);
+  transition: all .5s;
+}
+.play{
+  background: none;
+  border: none;
+}
+.play i{
+  color: white;
+  font-size: 2rem;
+  margin-top: .2rem;
+  cursor: pointer;
+  text-shadow: .1rem .1rem 1rem black;
+}
+.control-bar-wrapper{
+  width: 50vw;
+  height: .7rem;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  left: 0;
+  top: 0;
+}
+.control-bar{
+  bottom: 0;
+  background-color: red;
+  width: 0%;
+  height: .7rem;
+  transition: width .3s  linear;
+}
+
+/*end of section2*/
+
+/*section3*/
+.section3{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 28);
+  display: flex;
+  align-items: center;
+}
+.cards-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+.card{
+  height: 36rem !important;
+  width: 22rem !important;
+  background-color: rgb(32, 32, 32);
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem black;
+  transform: rotate(180deg);
+  position: relative;
+}
+.card-front{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-between;
+  position: absolute;
+}
+.cards-front-h{
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-left: 2rem;
+}
+.h-free{
+  border-radius: 1rem 1rem 0 0;
+  background: linear-gradient(to right, rgb(0, 111, 105), rgb(0, 255, 242));
+}
+.h-basic{
+  border-radius: 1rem 1rem 0 0;
+  background: linear-gradient(to right, rgb(110, 116, 0), rgb(205, 216, 0));
+}
+.h-standard{
+  border-radius: 1rem 1rem 0 0;
+  background: linear-gradient(to right, rgb(142, 0, 0), rgba(229, 0, 0, 0.995));
+}
+.h-premium{
+  border-radius: 1rem 1rem 0 0;
+  background: linear-gradient(to right, rgb(24, 109, 0), rgb(4, 215, 0));
+}
+.cards-front-pricing{
+  color: #fff;
+  font-size: 5.5rem;
+  font-weight: 300;
+  font-family: "MADE Soulmaze",sans-serif;
+}
+.card-list{
+  list-style: none;
+  height: 16rem;
+}
+.card-list li{
+  margin-bottom: 1rem;
+}
+.card-list span{
+  margin-left: 1rem;
+  font-size: 1.6rem;
+}
+.card-list i{
+  font-size: 1.8rem;
+}
+.l-free{
+  color:rgb(0, 167, 158) ;
+}
+.l-basic{
+  color:rgb(158, 167, 0) ;
+}
+.l-standard{
+  color:rgb(226, 0, 0) ;
+}
+.l-premium{
+  color:rgb(36, 166, 0) ;
+}
+.btn-front{
+  margin-bottom: 3rem;
+  width: 15rem;
+  height: 4.3rem;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-free{
+  background-color:rgb(0, 167, 158) ;
+}
+.btn-basic{
+  background-color:rgb(158, 167, 0) ;
+}
+.btn-standard{
+  background-color:rgb(226, 0, 0) ;
+}
+.btn-premium{
+  background-color:rgb(36, 166, 0) ;
+}
+.cards-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  transform: rotatey(180deg);
+}
+.btn-back{
+  color: #fff;
+  font-size: 2rem;
+}
+.back-free{
+  background: linear-gradient(to right, rgb(0, 111, 105), rgb(0, 255, 242));
+}
+.back-basic{
+  background: linear-gradient(to right, rgb(110, 116, 0), rgb(205, 216, 0));
+}
+.back-standard{
+  background: linear-gradient(to right, rgb(142, 0, 0), rgba(229, 0, 0, 0.995));
+}
+.back-premium{
+  background: linear-gradient(to right, rgb(24, 109, 0), rgb(4, 215, 0));
+}
+/*end of section3*/
+
+/*section4*/
+.section4{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(32, 32, 32);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.contact-wrapper{
+  position: absolute;
+  top: 6rem;
+  right: 13rem;
+  display: flex;
+  text-align: center;
+}
+.item{
+  margin: 0 4rem;
+}
+.item h1{
+  font-size: 1.6rem;
+  font-family: "MADE soulmaze",sans-serif;
+  font-weight: 100;
+  margin: 1rem;
+  color: #fff;
+}
+.item i{
+  font-size: 4rem;
+  color: rgb(166, 0, 0);
+}
+.item p{
+  font-size: 1.3rem;
+  color: rgb(196, 196, 196);
+}
+.contact{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 9rem;
+  right: 22rem;
+  width: 35%;
+  
+}
+.contact input,.contact textarea{
+  margin:.5rem 0;
+  padding: .8rem;
+  height: 4rem;
+  width: 50rem;
+  background-color: rgb(84, 84, 84);
+  color: rgb(255, 255, 255);
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  transition: all .3s;
+}
+.contact textarea{
+  max-width: 110%;
+  max-height: 7rem;
+  min-height: 4rem;
+}
+.contact input[type='submit']{
+  background-color: rgb(176, 0, 0);
+  letter-spacing: .2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .3s;
+  font-size: 1.5rem;
+}
+.contact input[type='submit']:hover{
+  background-color: rgb(139, 0, 0);
+}
+.section4-h{
+  position: absolute;
+  top: 45%;
+  right: 25%;
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 100;
+  font-family: "MADE soulmaze",sans-serif;
+}
+::placeholder{
+  color: rgb(194, 194, 194);
+}
+
+.contact input:hover,.contact textarea:hover{
+  letter-spacing: .3rem;
+  box-shadow: .2rem .2rem 1rem rgb(0, 0, 0) ;
+  transition: all .3s;
+}
+.footer{
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(53, 53, 53);
+}
+.footer-nav{
+  margin-left: 3rem;
+  font-size: 2rem;
+  letter-spacing: .1rem;
+}
+.footer-nav a{
+  margin: 0 2rem;
+  font-family: "MADE soulmaze",sans-serif;
+  font-weight: 300;
+  color: #fff;
+  transition: all .3s;
+}
+.footer-nav a:hover{
+  color: rgb(222, 0, 0);
+  letter-spacing: .2rem;
+  transition: all .3s;
+}
+.copy{
+  font-size: 1.8rem;
+  margin-right: 10rem;
+  color: rgb(202, 202, 202);
+  letter-spacing: .2rem;
+}
+/*end of section4*/
+
+/*responsive*/
+@media(max-width:2560px){
+  html{
+    font-size: 100%;
+  }
+}
+@media(max-width:1387px){
+  html{
+    font-size: 62.5%;
+  }
+}
+@media(max-width:1145px){
+  .video-wrapper{
+    width: 45vw;
+    height: 40vh;
+  }
+
+  html{
+    font-size: 60%;
+  }
+  .banner-h span{
+    font-size: 6rem;
+  }
+  .contact{
+    right: 11rem;
+  }
+  .section4-h{
+    right: 15%;
+  }
+  .footer-nav{
+    font-size: 1.5rem;
+  }
+}
+@media(max-width:1000px){
+  html{
+    font-size: 50%;
+  }
+  .section2{
+    height: 100vh;
+  }
+  .section-h{
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  .section4-h{
+    width: 100%;
+    text-align: center;
+    right: 0;
+  }
+  .header-line{
+    display: none;
+  }
+  .section2,.section1,.section3,.section4{
+    flex-direction: column;
+  }
+  .navbar{
+    width: 100%;
+  }
+  .video-wrapper{
+    left: 27.5vw;
+    top: 25vh;
+  }
+  .paragraph{
+    bottom: 1rem;
+    left: 25%;
+  }
+  .paragraph i{
+    font-size: 3rem;
+  }
+  .cards-wrapper{
+    top: 7rem;
+    right: 10rem;
+  }
+  .contact-wrapper{
+    top: 15rem;
+    left: 0;
+    width: 100%;
+    background-color: rgb(41, 41, 41);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .swiper{
+    height: 70vh;
+    width: 100%;
+  }
+  .item i{
+    font-size: 3rem;
+  }
+  .item p{
+    font-size: 1rem;
+  }
+
+  .contact{
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    align-items: center;
+  }
+  .contact input,.contact textarea{
+    width: 80%;
+    height: 7rem;
+  }
+  .footer{
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .copy{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+}
+/*@media(max-width:780px){
+  html{
+    font-size: 40%;
+  }
+  .contact{
+
+  }
+}
+/*end of responsive*/
